@@ -4,9 +4,9 @@ import json
 
 def scrape_glassdollar():
     url = 'https://ranking.glassdollar.com/'
-    response = requests.get(url)
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html.parser')
+    res = requests.get(url)
+    if res.status_code == 200:
+        soup = BeautifulSoup(res.content, 'html.parser')
         enterprises = []
 
         for enterprise in soup.find_all('div', class_='enterprise'):
